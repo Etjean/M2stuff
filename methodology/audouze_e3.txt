@@ -1,0 +1,100 @@
+Correction
+
+q1 : 
+RAM est une méthode linéaire. 
+
+q2 : 
+essayer methode non linéaire, car les courbes ne sont pas superposées
+
+q3 : 
+Le premier plan de décomposition principal permet de décomposer les echantillons verts et les rouges
+
+q4 : 
+décomposition CP1 et CP3 : elles contiennent le plus d'information séparant les catégories. ce sont les mailleures à choisir.
+
+q5 :
+
+
+q6 : 
+22283 genes
+
+q7 :
+cutoff = 0.05/nb de genes = 2.24 e-6 , avec une correction de bonferroni de 0.05
+
+q8 :
+0 genes. la correction est trop stricte
+
+q9 :
+Bonferroni est la plus strict. 
+
+q10 :
+0 genes aussi.
+
+
+q11 :
+cutoff trop faible. 
+
+q12 :
+jsp...
+
+q13 :
+il faut compter le nb de points rouges sous le cutoff, et diviser par le nb de points bleus.
+
+q14 :
+86 genes trouvés comme ca.
+
+q15 & q16 :
+lower p-value = 7.37 e-10 (ANOVA)  ---> 47 genes avec Bonferroni 0.05
+upper p-value = 4.3 e-6  (t-test)  ---> 0 genes avec Bonferroni 0.05
+
+q17 :
+YES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
