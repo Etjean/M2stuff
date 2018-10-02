@@ -1,0 +1,223 @@
+---
+title: "TP_DL"
+author: "Hélène Kabbech"
+output: pdf_document
+---
+
+Importation de la librarie keras
+```{r}
+#devtools::install_github(“rstudio/keras”)
+library(keras)
+# install_keras()
+```
+
+# Exercice 1 : Classification de données chiffres manuscrits
+
+###Chargement des données :
+```{r}
+mnist = dataset_mnist()
+mnist.x_train <- mnist$train$x
+mnist.y_train <- mnist$train$y
+mnist.x_test <- mnist$test$x
+mnist.y_test <- mnist$test$y
+```
+
+### Visualisation des données :
+```{r}
+rotate = function(x) t(apply(x, 2, rev))
+par(mfrow=c(3,3),mgp=c(1.5,0.5,0),mar=c(3,3,2,2),cex.lab=0.9,cex.axis=0.8,cex.main=1)
+for (i in 1:9) {
+  image(1:28,1:28,rotate(mnist.x_train[i,,]),col=grey.colors(12))
+  cat('i = ',i,' -> pred = ',mnist.y_train[i],'\n')
+}
+```
+Apprentissage et validation des données :
+– fonction d’activation du neurone est une “rectified linear unit”
+– fonction d’activation en sortie “softmax”
+– la fonction coût “cross-entropy”
+– deux couches cachées avec 256 et 128 neurones
+– un dropout de 30 %
+– une méthode d’optimisation de type rmsprop
+
+### Restructure des matrices
+```{r}
+# reshape
+mnist.x_train <- array_reshape(mnist.x_train, c(nrow(mnist.x_train), 784))
+mnist.x_test <- array_reshape(mnist.x_test, c(nrow(mnist.x_test), 784))
+# rescale
+mnist.x_train <- mnist.x_train / 255
+mnist.x_test <- mnist.x_test / 255
+# output generation
+mnist.y_train <- to_categorical(mnist.y_train, 10)
+mnist.y_test <- to_categorical(mnist.y_test, 10)
+```
+
+### Modèle et apprentissage de ce modèle sur l'échantillon d'apprentissage
+```{r}
+model = keras_model_sequential()
+#model = layer_embedding(model, input_dim=500, output_dim=32, input_length=100)
+
+model = layer_dense(model,units = 256, activation = "relu", input_shape=784) # Première couche
+model = layer_dropout(model,rate = 0.4)
+model = layer_dense(model,units = 128, activation = "relu")
+model = layer_dropout(model,rate = 0.3)
+model = layer_dense(model,units = 10, activation = "softmax")
+model = compile(model,loss = "categorical_crossentropy", optimizer = optimizer_rmsprop(), metrics=c("accuracy"))
+# batch-size entre 50 et 250 (nombre de points ?), augmenter epochs pour améliorer predict
+model.fit = fit(model, mnist.x_train, mnist.y_train, epochs = 30, batch_size = 128, validation_split = 0.2)
+```
+
+### Évaluation du modèle
+```{r}
+plot(model.fit$metrics$acc,type='l',col='red',ylab='accuracy',xlab='epochs')
+points(model.fit$metrics$val_acc,type='l',col="blue")
+legend=list(x="bottomright",legend=c('acc','val_acc'))
+
+plot(model.fit$metrics$loss,type='l',col='red',ylab='loss',xlab='epochs')
+points(model.fit$metrics$val_loss,type='l',col="blue")
+
+mnist.y_pred = predict_classes(model,mnist.x_test)
+mnist.y_pred.eval = evaluate(model,mnist.x_test,mnist.y_test)
+cat('acc : ', mnist.y_pred.eval$loss)
+cat('\nloss: ', mnist.y_pred.eval$acc)
+
+mnist.table = table(mnist.y_pred, mnist$test$y)
+mnist.val = sum(diag(mnist.table))/10000
+cat('\nÉvaluation : ', mnist.val)
+```
+
+# Exercice 2 : Classification des données "fashion"
+
+### Chargement des données :
+```{r}
+fashion = dataset_fashion_mnist()
+fa.x_train <- fashion$train$x
+fa.y_train <- fashion$train$y
+fa.x_test <- fashion$test$x
+fa.y_test <- fashion$test$y
+```
+
+### Visualisation des données :
+```{r}
+rotate = function(x) t(apply(x, 2, rev))
+par(mfrow=c(3,3),mgp=c(1.5,0.5,0),mar=c(3,3,2,2),cex.lab=0.9,cex.axis=0.8,cex.main=1)
+for (i in 1:9) {
+  image(1:28,1:28,rotate(fa.x_train[i,,]),col=grey.colors(12))
+  cat('i = ',i,' -> pred = ',fa.y_train[i],'\n')
+}
+```
+
+### Restructure des matrices
+```{r}
+# reshape
+fa.x_train <- array_reshape(fa.x_train, c(nrow(fa.x_train), 784))
+fa.x_test <- array_reshape(fa.x_test, c(nrow(fa.x_test), 784))
+# rescale
+fa.x_train <- fa.x_train / 255
+fa.x_test <- fa.x_test / 255
+# output generation
+fa.y_train <- to_categorical(fa.y_train, 10)
+fa.y_test <- to_categorical(fa.y_test, 10)
+```
+
+### Modèle et apprentissage du modèle de neurones de l'exercice 1 sur l'échantillon d'apprentissage
+```{r}
+# batch-size entre 50 et 250 (nombre de points ?), augmenter epochs pour améliorer predict
+model.fit = fit(model, fa.x_train, fa.y_train, epochs = 30, batch_size = 128, validation_split = 0.2)
+```
+
+### Évaluation du modèle précédent
+```{r}
+plot(model.fit$metrics$acc,type='l',col='red',ylab='accuracy',xlab='epochs')
+points(model.fit$metrics$val_acc,type='l',col="blue")
+legend=list(x="bottomright",legend=c('acc','val_acc'))
+
+plot(model.fit$metrics$loss,type='l',col='red',ylab='loss',xlab='epochs')
+points(model.fit$metrics$val_loss,type='l',col="blue")
+
+mnist.y_pred = predict_classes(model,mnist.x_test)
+mnist.y_pred.eval = evaluate(model,mnist.x_test,mnist.y_test)
+cat('Prédiction :')
+cat('\nacc : ', mnist.y_pred.eval$acc)
+cat('\nloss: ', mnist.y_pred.eval$loss)
+
+mnist.table = table(mnist.y_pred, mnist$test$y)
+mnist.val = sum(diag(mnist.table))/10000
+cat('\nBien prédits : ', mnist.val)
+```
+### Construction d'un nouveau modèle
+Ajout d'une couche neuronale et réduction de epochs
+```{r}
+model_2 = keras_model_sequential()
+#model = layer_embedding(model, input_dim=500, output_dim=32, input_length=100)
+
+layer_dense(model_2,units = 256, activation = "relu", input_shape=784) # Première couche
+layer_dropout(model_2,rate = 0.4)
+layer_dense(model_2,units = 128, activation = "relu")
+layer_dropout(model_2,rate = 0.3)
+layer_dense(model_2,units = 64, activation = "relu")
+layer_dropout(model_2,rate = 0.3)
+layer_dense(model_2,units = 10, activation = "softmax")
+compile(model_2,loss = "categorical_crossentropy", optimizer = optimizer_rmsprop(), metrics=c("accuracy"))
+# batch-size entre 50 et 250 (nombre de points ?), augmenter epochs pour améliorer predict
+model_2.fit = fit(model_2, mnist.x_train, mnist.y_train, epochs = 8, batch_size = 128, validation_split = 0.2)
+```
+
+### Évaluation de ce nouveau modèle
+```{r}
+plot(model_2.fit$metrics$acc,type='l',col='red',ylab='accuracy',xlab='epochs')
+points(model_2.fit$metrics$val_acc,type='l',col="blue")
+legend=list(x="bottomright",legend=c('acc','val_acc'))
+
+plot(model_2.fit$metrics$loss,type='l',col='red',ylab='loss',xlab='epochs')
+points(model_2.fit$metrics$val_loss,type='l',col="blue")
+legend=list(x="bottomright",legend=c('loss','loss_acc'))
+
+mnist.y_pred_2 = predict_classes(model_2,mnist.x_test)
+mnist.y_pred.eval_2 = evaluate(model_2,mnist.x_test,mnist.y_test)
+cat('Prédiction :')
+cat('\nacc : ', mnist.y_pred.eval_2$acc)
+cat('\nloss: ', mnist.y_pred.eval_2$loss)
+
+mnist.table_2 = table(mnist.y_pred_2, mnist$test$y)
+mnist.val_2 = sum(diag(mnist.table_2))/10000
+cat('\nBien prédits : ', mnist.val_2)
+```
+
+# Exercice 3 : Classification données "textuelles"
+```{r}
+imdb <- dataset_imdb(num_words = 500, maxlen = 100)
+train_data=pad_sequences(imdb$train$x[1:4000], maxlen=100, value=0, padding="post")
+test_data=pad_sequences(imdb$train$x[4001:5736], maxlen=100, value=0, padding="post")
+train_labels=imdb$train$y[1:4000]
+test_labels=imdb$train$y[4001:5736]
+```
+
+
+```{r}
+model = keras_model_sequential()
+model = layer_embedding(model, input_dim = 500, output_dim = 32, input_length=100)
+model = layer_dropout() 
+model = layer_lstm() # avec ou sans
+model = layer_dense() # couche cachée
+model = layer_dense() # sortie
+model = compile(model, optimizer = "rmsprop", loss = "binary_crossentropy", metrics = "accuracy")
+result = fit(model, train_data, train_labels, epochs = 10, batch_size = 32, validation_split=0.1) # ou autre
+```
+
+Visualisation des données :
+```{r}
+par(mfrow=c(3,3),mgp=c(1.5,0.5,0),mar=c(3,3,2,2),cex.lab=0.9,cex.axis=0.8,cex.main=1)
+for (i in 1:3) {
+  plot(fa.x_train[i])
+  cat('i = ',i,' -> pred = ',imdb.y_train[i],'\n')
+}
+mnist.y_pred = predict_classes(model,mnist.x_test)
+mnist.y_pred.eval = evaluate(model,mnist.x_test,mnist.y_test)
+cat('acc : ', mnist.y_pred.eval$loss)
+cat('\nloss: ', mnist.y_pred.eval$acc)
+
+mnist.table = table(mnist.y_pred, mnist$test$y)
+mnist.val = sum(diag(mnist.table))/10000
+cat('\nBien prédits : ', mnist.val)
+```
