@@ -361,11 +361,11 @@ l'intégrale : \[I = \frac{1}{exp(1)-1} \int_{0}^{2}exp(u)-1du\]
         \PY{k+kr}{for} \PY{p}{(}i \PY{k+kr}{in} \PY{l+m}{1}\PY{o}{:}nb\PYZus{}rep\PY{p}{)}\PY{p}{\PYZob{}}
             tirageX \PY{o}{=} runif\PY{p}{(}n\PY{p}{,} min\PY{o}{=}\PY{l+m}{0}\PY{p}{,} max\PY{o}{=}\PY{l+m}{2}\PY{p}{)}     \PY{c+c1}{\PYZsh{} x entre 0 et 2}
             tirageY \PY{o}{=} runif\PY{p}{(}n\PY{p}{,} min\PY{o}{=}\PY{l+m}{0}\PY{p}{,} max\PY{o}{=}m\PY{p}{)}     \PY{c+c1}{\PYZsh{} y entre 0 et m}
-            ns \PY{o}{=} \PY{k+kp}{sum}\PY{p}{(}g\PY{p}{(}tirageX\PY{p}{)}\PY{o}{\PYZhy{}}tirageY \PY{o}{\PYZgt{}=} \PY{l+m}{0}\PY{p}{)}    \PY{c+c1}{\PYZsh{} nombre de tirages en\PYZhy{}dessous de g}
+            ns \PY{o}{=} \PY{k+kp}{sum}\PY{p}{(}g\PY{p}{(}tirageX\PY{p}{)}\PY{o}{\PYZhy{}}tirageY \PY{o}{\PYZgt{}=} \PY{l+m}{0}\PY{p}{)}    \PY{c+c1}{\PYZsh{} nombre de tirages sous g}
             Ibw \PY{o}{=} m\PY{o}{*}\PY{p}{(}\PY{l+m}{2}\PY{l+m}{\PYZhy{}0}\PY{p}{)}\PY{o}{*}ns\PY{o}{/}n                   \PY{c+c1}{\PYZsh{} valeur estimée de I}
             list\PYZus{}Ibw \PY{o}{=} \PY{k+kt}{c}\PY{p}{(}list\PYZus{}Ibw\PY{p}{,} Ibw\PY{p}{)}
         \PY{p}{\PYZcb{}}
-        Ibw \PY{o}{=} \PY{k+kp}{mean}\PY{p}{(}list\PYZus{}Ibw\PY{p}{)}                     \PY{c+c1}{\PYZsh{} valeur obtenue avec le tirage noir et blanc}
+        Ibw \PY{o}{=} \PY{k+kp}{mean}\PY{p}{(}list\PYZus{}Ibw\PY{p}{)}                     \PY{c+c1}{\PYZsh{} valeur tirage noir et blanc}
         Ibw
 \end{Verbatim}
 
