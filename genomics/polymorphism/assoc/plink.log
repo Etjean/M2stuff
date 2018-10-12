@@ -1,0 +1,44 @@
+
+@----------------------------------------------------------@
+|        PLINK!       |     v1.07      |   10/Aug/2009     |
+|----------------------------------------------------------|
+|  (C) 2009 Shaun Purcell, GNU General Public License, v2  |
+|----------------------------------------------------------|
+|  For documentation, citation & bug-report instructions:  |
+|        http://pngu.mgh.harvard.edu/purcell/plink/        |
+@----------------------------------------------------------@
+
+Skipping web check... [ --noweb ] 
+Writing this text to log file [ plink.log ]
+Analysis started: Fri Oct 12 16:52:06 2018
+
+Options in effect:
+	--noweb
+	--bfile mudym
+	--logistic
+	--sex
+
+Reading map (extended format) from [ mudym.bim ] 
+8000 markers to be included from [ mudym.bim ]
+Reading pedigree information from [ mudym.fam ] 
+1000 individuals read from [ mudym.fam ] 
+989 individuals with nonmissing phenotypes
+Assuming a disease phenotype (1=unaff, 2=aff, 0=miss)
+Missing phenotype value is also -9
+328 cases, 661 controls and 11 missing
+500 males, 500 females, and 0 of unspecified sex
+Reading genotype bitfile from [ mudym.bed ] 
+Detected that binary PED file is v1.00 SNP-major mode
+Before frequency and genotyping pruning, there are 8000 SNPs
+1000 founders and 0 non-founders found
+Total genotyping rate in remaining individuals is 0.989962
+0 SNPs failed missingness test ( GENO > 1 )
+0 SNPs failed frequency test ( MAF < 0 )
+After frequency and genotyping pruning, there are 8000 SNPs
+After filtering, 328 cases, 661 controls and 11 missing
+After filtering, 500 males, 500 females, and 0 of unspecified sex
+Converting data to Individual-major format
+Writing logistic model association results to [ plink.assoc.logistic ] 
+
+Analysis finished: Fri Oct 12 16:52:10 2018
+

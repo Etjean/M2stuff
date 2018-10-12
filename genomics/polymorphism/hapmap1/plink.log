@@ -1,0 +1,36 @@
+
+@----------------------------------------------------------@
+|        PLINK!       |     v1.07      |   10/Aug/2009     |
+|----------------------------------------------------------|
+|  (C) 2009 Shaun Purcell, GNU General Public License, v2  |
+|----------------------------------------------------------|
+|  For documentation, citation & bug-report instructions:  |
+|        http://pngu.mgh.harvard.edu/purcell/plink/        |
+@----------------------------------------------------------@
+
+Skipping web check... [ --noweb ] 
+Writing this text to log file [ plink.log ]
+Analysis started: Fri Oct 12 15:00:16 2018
+
+Options in effect:
+	--noweb
+	--bfile clean
+	--freq
+
+Reading map (extended format) from [ clean.bim ] 
+76464 markers to be included from [ clean.bim ]
+Reading pedigree information from [ clean.fam ] 
+88 individuals read from [ clean.fam ] 
+88 individuals with nonmissing phenotypes
+Assuming a disease phenotype (1=unaff, 2=aff, 0=miss)
+Missing phenotype value is also -9
+43 cases, 45 controls and 0 missing
+88 males, 0 females, and 0 of unspecified sex
+Reading genotype bitfile from [ clean.bed ] 
+Detected that binary PED file is v1.00 SNP-major mode
+Before frequency and genotyping pruning, there are 76464 SNPs
+88 founders and 0 non-founders found
+Writing allele frequencies (founders-only) to [ plink.frq ] 
+
+Analysis finished: Fri Oct 12 15:00:16 2018
+

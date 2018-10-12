@@ -1,0 +1,48 @@
+
+@----------------------------------------------------------@
+|        PLINK!       |     v1.07      |   10/Aug/2009     |
+|----------------------------------------------------------|
+|  (C) 2009 Shaun Purcell, GNU General Public License, v2  |
+|----------------------------------------------------------|
+|  For documentation, citation & bug-report instructions:  |
+|        http://pngu.mgh.harvard.edu/purcell/plink/        |
+@----------------------------------------------------------@
+
+Skipping web check... [ --noweb ] 
+Writing this text to log file [ small.log ]
+Analysis started: Fri Oct 12 16:20:17 2018
+
+Options in effect:
+	--noweb
+	--bfile clean
+	--extract indep.prune.in
+	--make-bed
+	--out small
+
+Reading map (extended format) from [ clean.bim ] 
+53822 markers to be included from [ clean.bim ]
+Reading pedigree information from [ clean.fam ] 
+88 individuals read from [ clean.fam ] 
+88 individuals with nonmissing phenotypes
+Assuming a disease phenotype (1=unaff, 2=aff, 0=miss)
+Missing phenotype value is also -9
+43 cases, 45 controls and 0 missing
+88 males, 0 females, and 0 of unspecified sex
+Reading genotype bitfile from [ clean.bed ] 
+Detected that binary PED file is v1.00 SNP-major mode
+Reading list of SNPs to extract [ indep.prune.in ] ... 21941 read
+Before frequency and genotyping pruning, there are 21941 SNPs
+88 founders and 0 non-founders found
+Total genotyping rate in remaining individuals is 0.998368
+0 SNPs failed missingness test ( GENO > 1 )
+0 SNPs failed frequency test ( MAF < 0 )
+After frequency and genotyping pruning, there are 21941 SNPs
+After filtering, 43 cases, 45 controls and 0 missing
+After filtering, 88 males, 0 females, and 0 of unspecified sex
+Writing pedigree information to [ small.fam ] 
+Writing map (extended format) information to [ small.bim ] 
+Writing genotype bitfile to [ small.bed ] 
+Using (default) SNP-major mode
+
+Analysis finished: Fri Oct 12 16:20:17 2018
+
