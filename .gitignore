@@ -1,0 +1,12 @@
+# Metagenomics
+metagenomics/tp_1.tar.gz
+metagenomics/tp_2.tar.gz
+metagenomics/tp_1/fastq/
+metagenomics/tp_1/results/
+metagenomics/tp_1/my_dvpt/20ng-20cycles-1*
+metagenomics/tp_2/results/*/intermediate_contigs/
+metagenomics/tp_2/fastq/
+metagenomics/tp_2/my_dvpt/*.fastq*
+metagenomics/tp_2/databases/*.fastq*
+metagenomics/tp_2/databases/*.fasta*
+

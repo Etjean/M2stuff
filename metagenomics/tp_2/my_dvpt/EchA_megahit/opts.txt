@@ -1,0 +1,13 @@
+-1
+EchA_R1.trimmed.fastq
+-2
+EchA_R2.trimmed.fastq
+-m
+0.5
+-t
+3
+--k-list
+39
+-o
+EchA_megahit
+MEGAHIT_TEMP_DIR: EchA_megahit/tmp/
