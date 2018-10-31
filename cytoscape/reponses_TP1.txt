@@ -1,0 +1,33 @@
+Reponses au TP 1
+
+Question 1
+Il y a 63 noeuds en voisinage direct de TP53
+
+Question 2
+Average number of neighbours = 4.582
+
+Question 3
+Dans l'onglet Node Degree Distribution, Les noeuds les plus nombreux sont ceux de degré 1 (85 noeuds sur 419)
+
+Question 4
+A droite, car il a 63 voisins. Cytoscpae indique 65 car il y a aussi une arete de TP53 sur lui meme. Il compte 2 pour arete "sortante" et arete "entrante".
+
+Question 5
+Il faut regarder les deux courbes : 
+1 - Node degree distribution 
+2 - Average clustering coefficient distribution
+Random : 1 = Gaussienne  &  2 = Constante
+Scale-free : 1 = Affine décroissante  &  2 = Constante
+Scale-free hierarchical : 1 = Affine décroissante  &  2 = Affine décroissante
+Donc, ici, on a un réseau "scale free hierarchical"
+
+Question 6
+Il faut au maximum 4 arêtes pour connecter 2 noeuds dans le graphe.
+
+
+
+
+
+
+
+
