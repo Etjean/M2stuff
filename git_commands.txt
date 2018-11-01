@@ -1,0 +1,61 @@
+
+
+# MERGE
+## No fast-forward
+git merge --no-ff BRANCH
+
+
+# ADD
+## Add interactively
+git add -p
+git add -i
+
+
+# BRANCH
+## Create branch
+git branch [BRANCH]
+## Remove branch
+git branch -d [BRANCH]
+
+
+# CHECKOUT 
+## Create new branch and move onto it
+git checkout -b [BRANCH]
+
+
+# LOG
+git log --graph
+git log --all
+git log --first-parent
+git log --no-merges
+git log -c
+
+
+# FETCH
+git fetch --all
+
+
+# PULL
+git pull origin [BRANCH]
+
+
+# PUSH
+git push origin [BRANCH]
+
+
+# RESET
+
+
+# REVERT
+
+
+
+
+
+
+
+
+
+
+
+
