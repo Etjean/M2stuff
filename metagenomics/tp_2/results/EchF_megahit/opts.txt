@@ -1,0 +1,13 @@
+-1
+fastq/EchF_R1.trimmed.fastq
+-2
+fastq/EchF_R2.trimmed.fastq
+-m
+0.6
+-t
+3
+--k-list
+39
+-o
+results/EchF_megahit
+MEGAHIT_TEMP_DIR: results/EchF_megahit/tmp/

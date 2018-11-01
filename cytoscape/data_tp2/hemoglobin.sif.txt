@@ -1,0 +1,3 @@
+ag	pp	ag
+ag	pp	bg	
+bg	pp	bg

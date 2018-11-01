@@ -1,0 +1,91 @@
+
+@----------------------------------------------------------@
+|        PLINK!       |     v1.07      |   10/Aug/2009     |
+|----------------------------------------------------------|
+|  (C) 2009 Shaun Purcell, GNU General Public License, v2  |
+|----------------------------------------------------------|
+|  For documentation, citation & bug-report instructions:  |
+|        http://pngu.mgh.harvard.edu/purcell/plink/        |
+@----------------------------------------------------------@
+
+Skipping web check... [ --noweb ] 
+Writing this text to log file [ indep.log ]
+Analysis started: Fri Oct 12 16:18:25 2018
+
+Options in effect:
+	--noweb
+	--bfile clean
+	--indep-pairwise 50 5 0.1
+	--out indep
+
+Reading map (extended format) from [ clean.bim ] 
+53822 markers to be included from [ clean.bim ]
+Reading pedigree information from [ clean.fam ] 
+88 individuals read from [ clean.fam ] 
+88 individuals with nonmissing phenotypes
+Assuming a disease phenotype (1=unaff, 2=aff, 0=miss)
+Missing phenotype value is also -9
+43 cases, 45 controls and 0 missing
+88 males, 0 females, and 0 of unspecified sex
+Reading genotype bitfile from [ clean.bed ] 
+Detected that binary PED file is v1.00 SNP-major mode
+Before frequency and genotyping pruning, there are 53822 SNPs
+88 founders and 0 non-founders found
+Total genotyping rate in remaining individuals is 0.998465
+0 SNPs failed missingness test ( GENO > 1 )
+0 SNPs failed frequency test ( MAF < 0 )
+After frequency and genotyping pruning, there are 53822 SNPs
+After filtering, 43 cases, 45 controls and 0 missing
+After filtering, 88 males, 0 females, and 0 of unspecified sex
+Performing LD-based pruning...
+Writing pruned-in SNPs to [ indep.prune.in ]
+Writing pruned-out SNPs to [ indep.prune.out ]
+Scanning from chromosome 1 to 22
+
+Scan region on chromosome 1 from [ rs6681049 ] to [ rs6587759 ]
+For chromosome 1, 2607 SNPs pruned out, 1817 remaining
+Scan region on chromosome 2 from [ rs4438516 ] to [ rs749924 ]
+For chromosome 2, 3177 SNPs pruned out, 1875 remaining
+Scan region on chromosome 3 from [ rs990284 ] to [ rs9325420 ]
+For chromosome 3, 1927 SNPs pruned out, 1363 remaining
+Scan region on chromosome 4 from [ rs13125929 ] to [ rs7666658 ]
+For chromosome 4, 1728 SNPs pruned out, 1299 remaining
+Scan region on chromosome 5 from [ rs972406 ] to [ rs888709 ]
+For chromosome 5, 1888 SNPs pruned out, 1314 remaining
+Scan region on chromosome 6 from [ rs1418706 ] to [ rs3800235 ]
+For chromosome 6, 2354 SNPs pruned out, 1372 remaining
+Scan region on chromosome 7 from [ rs4074119 ] to [ rs1988949 ]
+For chromosome 7, 957 SNPs pruned out, 923 remaining
+Scan region on chromosome 8 from [ rs11990857 ] to [ rs7462303 ]
+For chromosome 8, 3097 SNPs pruned out, 1269 remaining
+Scan region on chromosome 9 from [ rs2260559 ] to [ rs936249 ]
+For chromosome 9, 2281 SNPs pruned out, 1220 remaining
+Scan region on chromosome 10 from [ rs4881493 ] to [ rs9630042 ]
+For chromosome 10, 1635 SNPs pruned out, 1176 remaining
+Scan region on chromosome 11 from [ rs511744 ] to [ rs10894950 ]
+For chromosome 11, 1410 SNPs pruned out, 1014 remaining
+Scan region on chromosome 12 from [ rs2291928 ] to [ rs11147233 ]
+For chromosome 12, 984 SNPs pruned out, 940 remaining
+Scan region on chromosome 13 from [ rs9508861 ] to [ rs3861104 ]
+For chromosome 13, 1128 SNPs pruned out, 796 remaining
+Scan region on chromosome 14 from [ rs7159961 ] to [ rs8020855 ]
+For chromosome 14, 862 SNPs pruned out, 736 remaining
+Scan region on chromosome 15 from [ rs7179869 ] to [ rs352740 ]
+For chromosome 15, 742 SNPs pruned out, 679 remaining
+Scan region on chromosome 16 from [ rs2562164 ] to [ rs4785612 ]
+For chromosome 16, 617 SNPs pruned out, 708 remaining
+Scan region on chromosome 17 from [ rs8074031 ] to [ rs4986075 ]
+For chromosome 17, 674 SNPs pruned out, 665 remaining
+Scan region on chromosome 18 from [ rs2509430 ] to [ rs12970236 ]
+For chromosome 18, 1493 SNPs pruned out, 791 remaining
+Scan region on chromosome 19 from [ rs4524061 ] to [ rs10448 ]
+For chromosome 19, 417 SNPs pruned out, 528 remaining
+Scan region on chromosome 20 from [ rs3968581 ] to [ rs6062678 ]
+For chromosome 20, 479 SNPs pruned out, 583 remaining
+Scan region on chromosome 21 from [ rs1296972 ] to [ rs2839378 ]
+For chromosome 21, 753 SNPs pruned out, 449 remaining
+Scan region on chromosome 22 from [ rs994335 ] to [ rs756638 ]
+For chromosome 22, 671 SNPs pruned out, 424 remaining
+
+Analysis finished: Fri Oct 12 16:18:31 2018
+
