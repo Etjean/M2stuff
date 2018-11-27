@@ -9,4 +9,6 @@ metagenomics/tp_2/fastq/
 metagenomics/tp_2/my_dvpt/*.fastq*
 metagenomics/tp_2/databases/*.fastq*
 metagenomics/tp_2/databases/*.fasta*
-
+metagenomics/tp_1/my_dvpt2/work/
+metagenomics/tp_1/my_dvpt2/.netxflow
+metagenomics/tp_1/my_dvpt2/20ng-20cycles-1*
